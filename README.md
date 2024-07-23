@@ -1,0 +1,14 @@
+### 프로젝트 구조
+- main.go
+- server/
+    - server.go
+    - client_handler.go
+    - channel_handler.go
+- client/
+    - main.go
+- models/
+    - user.go
+    - channel.go
+- utils/
+    - auth.go
+    - message.go
