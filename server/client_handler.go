@@ -8,7 +8,7 @@ import (
 )
 
 func handleClient(conn net.Conn) {
-	conn.Close()
+	defer conn.Close()
 	reader := bufio.NewReader(conn)
 
 	// 사용자 이름 요청
