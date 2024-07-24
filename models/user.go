@@ -1,6 +1,6 @@
 package models
 
-type Channel struct {
-	Name    string
-	Members []string
+type User struct {
+	Username string
+	Password string
 }
