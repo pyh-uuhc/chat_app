@@ -18,6 +18,12 @@ func main() {
 	go readMessage(conn)
 
 	reader := bufio.NewReader(os.Stdin)
+
+	// 사용자 이름 입력
+	fmt.Print("Enter your username: ")
+	message, _ := reader.ReadString('\n')
+	fmt.Fprint(conn, message)
+
 	for {
 		message, _ := reader.ReadString('\n')
 		fmt.Fprint(conn, message)

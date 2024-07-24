@@ -11,8 +11,6 @@ func handleClient(conn net.Conn) {
 	defer conn.Close()
 	reader := bufio.NewReader(conn)
 
-	// 사용자 이름 요청
-	conn.Write([]byte("Enter your username: "))
 	username, _ := reader.ReadString('\n')
 	username = strings.TrimSpace(username)
 	clients[conn] = username
@@ -33,7 +31,7 @@ func handleClient(conn net.Conn) {
 		} else if strings.HasPrefix(message, "/msg") {
 			handleChannelMessage(conn, message)
 		} else {
-			conn.Write([]byte("Unknown command\n"))
+			conn.Write([]byte("\nUnknown command\n"))
 		}
 	}
 }
